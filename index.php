@@ -1,41 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+<title>
+DSA e-Library
+</title>
+</head>
+<body>
+<div id="wrapper">
 <?php
-// include database and object files
-include_once 'config/database.php';
-include_once 'objects/book.php';
-include_once 'objects/category.php';
-
-// get database connection
-$database = new Database();
-$db = $database->getConnection();
-
-// pass connection to objects
-$book = new Book($db);
-$category = new Category($db);
-$page_title = "Categories";
-include_once "layout_header.php";
-
-
+include('includes/header.php');
 ?>
-<!-- PHP post code will be here -->
- 
-<!-- HTML form for creating a product -->
-
- 
- <table  class='table table-hover table-responsive table-bordered'>
- <?php
-            // read the product categories from the database
-            $stmt = $category->read();
-             while ($row_category = $stmt->fetch(PDO::FETCH_ASSOC)){
-                 extract($row_category);
-                 echo "<tr>";          
-                 echo "<td align=\"center\"><a href=\"books_by_cat.php?cat={$id}\">{$class_name}</a></td>";
-                 echo "</tr>";
-                 
-            }
- 
-?>
-</table>
 <?php
-// footer
-include_once "layout_footer.php";
+/*
+  This is Navigation Section  
+*/
+include('includes/nav.php');
 ?>
+<div id="content">
+<div id="main_img">
+
+<img src="images/dsa1.jpg" width="295" height="161"/> 
+
+</div>
+<h3>ရည်ရွယ်ချက်</h3>
+<p>
+စစ်တက္ကသိုလ် <b>e-Library</b> ကို စာကြည့်တိုက်လုပ်ငန်းများအားလုံးအား အထောက်အပံ့ဖြစ်စေရန်၊ စစ်တက္ကသိုလ်စာကြည့်တိုက်အား အဆင့်မြင့်စာကြည့်တိုက်တစ်ခုအဖြစ် မြှင့်တင်ပေးရန်နှင့် စာပေနှင့် ဘာသာရပ်ဆိုင်ရာလေ့လာသူများအတွက် အထောက်အကူပြုပေးနိုင်ရန် ရည်ရွယ်၍ တည်ထောင်ခဲ့ပါသည်။ 
+</p>
+<h3>အသုံးပြုပုံ</h3>
+<p>
+<b>e-Library</b> တွင်-
+
+	<ul>* စာအုပ်များ </ul>
+	<ul>* ကဏ္ဍအမျိုးအစားအလိုက်နှင့်</ul>
+	<ul>* စာအုပ်ရှာဖွေရေးစနစ် ဟူ၍ စာအုပ်ဖတ်ရှုနိုင်သည့်စနစ် ၃ မျိုးပါဝင် ပါသည်။</ul>
+	
+ </p>
+<p>စာအုပ်များစာမျက်နှာတွင် စာကြည့်တိုက်အတွင်းရှိ စာမျက်နှာအလိုက် မိမိနှစ်သက်ရာစာအုပ်များအား Read book ကိုနှိပ်၍ ဖတ်ရှုနိုင်မည်ဖြစ်ပါသည်။ ကဏ္ဍအလိုက်စာမျက်နှာတွင် စာအုပ်အမျိုးအစားများအလိုက်စုစည်းပေးထားပြီး မိမိဖတ်ရှုလေ့လာချင်သည့် ကဏ္ဍအလိုက်စာအုပ်များကို အလွယ်တကူရှာဖွေဖတ်ရှုနိုင်ပါသည်။ ထို့အပြင် စာအုပ်ရှာဖွေရေးစနစ် စာမျက်နှာတွင် မိမိဖတ်ရှုလိုသည့် စာအုပ်အမည် သို့မဟုတ် စာရေးဆရာအမည်တို့ဖြင့်လည်း စာအုပ်များကို အလွယ်တကူရှာဖွေနိုင်ပါသည်။
+</p>
+
+<p>
+စစ်တက္ကသိုလ် e-Library စနစ်တွင် နေ့စဉ် ပြည်တွင်းသတင်းစာများ၊ နိုင်ငံတကာ သတင်း ဂျာနယ်များ၊ အားကစားစာစောင်များကို ရှာဖွေဖတ်ရှုလေ့လာနိုင်ရန် ထည့်သွင်းပေးထားသည့်အပြင် တပ်မတော် သတင်းများအား အချိန်နှင့် တစ်ပြေးညီ သိရှိနိုင်ရန် မြဝတီ သတင်းစာမျက်နှာအားကြည့်ရှုနိုင်ရန် ထည့်သွင်းပေးထားပါသည်။ ထို့အပြင် မိမိအလိုရှိသော ဘာသာရပ်ဆိုင်ရာ eBookများကိုလဲ e-Library တာဝန်ခံနှင့် ဆက်သွယ်၍ ရှာဖွေတောင်းခံနိုင်ပါသည်။ 
+</p>
+
+</div><!-- #End #content -->
+<?php
+/* This is sidebar Section*/
+include('includes/sidebar.php');
+?>
+<?php
+/*This is Footer Section*/
+include('includes/footer.php');
+?>
+</div><!-- End #wrapper -->
+</body>
+</html>
