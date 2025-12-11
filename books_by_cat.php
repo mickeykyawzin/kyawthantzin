@@ -30,15 +30,14 @@ if($num>0){
     
     echo "<table class='table table-hover table-responsive table-bordered'>";
     echo "<tr>";
-    echo "<th>Accession No</th>";
-    echo "<th>Shelf No</th>";
-    echo "<th>Call No</th>";
-    echo "<th>Author</th>";
-    echo "<th>Title</th>";
-    echo "<th>Publisher</th>";
-    echo "<th>Released year</th>";
-    echo "<th>Status</th>";
-    echo "<th>Booking</th>";
+    echo "<th>acc_no</th>";
+    echo "<th>shelf_no</th>";
+    echo "<th>call_no</th>";
+    echo "<th>author</th>";
+    echo "<th>title</th>";
+    echo "<th>publisher</th>";
+    echo "<th>released_year</th>";
+    echo "<th>status</th>";
     //echo "<th>remark</th>";
     echo "</tr>";
     
@@ -51,7 +50,7 @@ if($num>0){
         echo "<td>{$shelf_no}</td>";
         echo "<td>{$call_no}</td>";
         echo "<td>{$author}</td>";
-        echo "<td><a href=\"#\" data-toggle=\"popover\" title=\"Book Description\" data-content=\"{$description}\">{$title}</a></td>";
+        echo "<td>{$title}</td>";
         echo "<td>{$publisher}</td>";
         echo "<td>{$released_year}</td>";
         if($status==1)
@@ -64,7 +63,7 @@ if($num>0){
             echo "<td style=\"color:red\";>Not available</td>";
             
         }
-        echo "<td><a href=\"booking.php?call_no=".$call_no."&title=".$title."\">Book</a></td>";
+        
         //echo "<td>{$remark}</td>";        
         echo "</tr>";
         
