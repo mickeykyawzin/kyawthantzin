@@ -27,8 +27,6 @@ if($_POST){
     $Booking_order->name = $_POST['name'];
     $Booking_order->title = $_POST['title'];
     $Booking_order->call_no = $_POST['caller_no'];
-    $Booking_order->department = $_POST['department'];
-    $Booking_order->phone_no = $_POST['phone_no'];
     //echo $_POST['caller_no'];
     if($Booking_order->create()){
         //header('Location:search.php');
@@ -55,17 +53,10 @@ if($_POST){
             <td>ကိုယ်ပိုင်အမှတ်</td>
             <td><input type='text' name='id'  class='form-control' /></td>
         </tr>
+ 
         <tr>
             <td>အဆင့်/အမည်</td>
             <td><input type='text' name='name' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>ဌာန</td>
-            <td><input type='text' name='department' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>ဖုန်းနံပါတ်</td>
-            <td><input type='text' name='phone_no' class='form-control' /></td>
         </tr>
         <tr>
             <td>အကြောင်းအရာ</td>
